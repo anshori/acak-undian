@@ -3,11 +3,19 @@ function acak() {
 	// var audio = new Audio("assets/sound/dice-roll-sound-effect-1139.mp3");
 	// audio.play();
 
+  // Reset confetti
+  document.getElementById("confetti-wrapper").innerHTML = "";
+
 	// Generate random number
 	for (let i = 0; i < 50; i++) {
 		setTimeout(() => {
+      // value 0 or 1
 			let angka1 = Math.floor(Math.random() * 2);
+
+      // value 0 - 9
 			let angka2 = Math.floor(Math.random() * 10);
+
+      // value 0 - 9
 			let angka3 = Math.floor(Math.random() * 10);
 			document.getElementById("angka1").innerHTML = angka1;
 			document.getElementById("angka2").innerHTML = angka2;
@@ -18,7 +26,9 @@ function acak() {
 }
 
 function celebrate() {
-  for(i=0; i<50; i++) {
+  // reset timer
+  clearTimeout(window.timer);
+  for(i=0; i<100; i++) {
     // Random rotation
     var randomRotation = Math.floor(Math.random() * 360);
       // Random Scale
