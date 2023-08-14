@@ -145,6 +145,9 @@ button:active {
 
 /* if screen < 768 */
 @media screen and (max-width: 768px) {
+  body {
+    background-image: url("../image/bg-hut-78-portrait.jpg");
+  }
   .container {
     width: 100%;
     height: 100vh;
@@ -155,7 +158,7 @@ button:active {
   }
   .card	{
     width: 100%;
-    height: 400px;
+    height: 300px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     display: flex;
@@ -164,8 +167,8 @@ button:active {
     flex-direction: column;
   }
   .dadu {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     background-color: #333;
     border-radius: 10px;
     display: flex;
