@@ -17,6 +17,22 @@ function acak() {
 
       // value 0 - 9
 			let angka3 = Math.floor(Math.random() * 10);
+
+      // angka2 max 6
+      if (angka1 == 1) {
+        angka2 = Math.floor(Math.random() * 7);
+      }
+
+      // angka1 and angka2 = 0
+      if (angka1 == 0 && angka2 == 0) {
+        angka3 = 1;
+      }
+
+      // angka3 max 0
+      if (angka1 == 1 && angka2 == 6) {
+        angka3 = 0;
+      }
+
 			document.getElementById("angka1").innerHTML = angka1;
 			document.getElementById("angka2").innerHTML = angka2;
 			document.getElementById("angka3").innerHTML = angka3;
