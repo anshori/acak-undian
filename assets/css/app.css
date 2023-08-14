@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+body {
+	background-image: url("../image/bg-hut-78.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+  background-position: center;
+	overflow: hidden;
+}
+.title {
+  font-size: 42px;
+}
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.dadu {
+	width: 240px;
+	height: 240px;
+	background-color: #333;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 100px;
+	font-weight: bold;
+	color: #f00;
+	margin: 20px;
+	box-shadow: 5px 5px 7px #000;
+}
+
+.angka {
+  /* vertical center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+	font-size: 180px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-shadow: 2px 2px 5px #000;
+}
+
+.button-area {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.button-area button {
+	border: 1px solid rgb(54, 54, 54);
+	background-color: #5dca88;
+	padding: 10px 50px;
+	margin: 10px;
+	cursor: pointer;
+	box-shadow: 0 7px #1a7940;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+button:active {
+	position: relative;
+	top: 7px;
+	box-shadow: none;
+	color: #333;
+}
+
+.card	{
+	width: 1000px;
+	height: 400px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  margin-top: -120px;
+	flex-direction: column;
+}
+
+.footer {
+	font-style: italic;
+	font-size: 10px;
+	margin-top: 50px;
+	color: gray;
+}
+
+:root {
+  --border-color: #D7DBE3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+  --green: #0CD977;
+  --red: #FF1C1C;
+  --pink: #FF93DE;
+  --purple: #5767ED;
+  --yellow: #FFC61C;
+  --rotation: 0deg;
+  }
+
+.emoji {
+  display: block;
+  text-align: center;
+  font-size: 5rem;
+  line-height: 5rem;
+  transform: scale(0.5);
+  animation: scaleCup 2s infinite alternate;
+}
+
+@keyframes confettiRain {
+  0% {
+    opacity: 1;
+    margin-top: -100vh;
+    margin-left: -200px;
+  } 
+  
+  100% {
+    opacity: 1;
+    margin-top: 100vh;
+    margin-left: 200px;
+  }
+}
+
+.confetti {
+  opacity: 0;
+  position: absolute;
+  width: 1rem;
+  height: 1.5rem;
+  transition: 500ms ease;
+  animation: confettiRain 5s infinite;
+}
+
+#confetti-wrapper {
+  overflow: hidden !important;
+}
+
+
+/* if screen < 768 */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card	{
+    width: 100%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .dadu {
+    width: 140px;
+    height: 140px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #f00;
+    margin: 20px;
+    box-shadow: 5px 5px 7px #000;
+  }
+  .angka {
+    font-size: 90px;
+  }
+  .button-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .button-area button {
+    border: 1px solid rgb(54, 54, 54);
+    background-color: #5dca88;
+    padding: 10px 50px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 7px #1a7940;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .button-area button:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+    color: #333;
+  }
+  .footer {
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 50px;
+    color: gray;
+  }
+}
