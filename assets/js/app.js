@@ -25,7 +25,7 @@ function acak() {
 
       // angka1 and angka2 = 0
       if (angka1 == 0 && angka2 == 0) {
-        angka3 = 1;
+        angka3 = Math.floor(Math.random() * 9) + 1;
       }
 
       // angka3 max 0
@@ -55,7 +55,7 @@ function celebrate() {
     
     // Random animation-delay
     var randomAnimationDelay = Math.floor(Math.random() * 15);
-    console.log(randomAnimationDelay);
+    // console.log(randomAnimationDelay);
 
     // Random colors
     var colors = ['#0CD977', '#FF1C1C', '#FF93DE', '#5767ED', '#FFC61C', '#8497B0']
