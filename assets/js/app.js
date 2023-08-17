@@ -6,6 +6,14 @@ function acak() {
   // Reset confetti
   document.getElementById("confetti-wrapper").innerHTML = "";
 
+  let jumlahdoorprise = 50;
+
+  let angkakeluar = document.getElementById("angkakeluar").value;
+  angkakeluar = angkakeluar.split(",");
+  angkakeluar = angkakeluar.map(Number);
+
+  console.log(angkakeluar.length);
+
 	// Generate random number
 	for (let i = 0; i < 50; i++) {
 		setTimeout(() => {
@@ -36,9 +44,34 @@ function acak() {
 			document.getElementById("angka1").innerHTML = angka1;
 			document.getElementById("angka2").innerHTML = angka2;
 			document.getElementById("angka3").innerHTML = angka3;
+
+      // angka keluar
+      angka123 = angka1.toString() + angka2.toString() + angka3.toString();
+      angka123 = parseInt(angka123);
+
+      // if angkakeluar length jumlah undian yang keluar + 1 karena 0 dihitung
+      if (angkakeluar.length == jumlahdoorprise + 1) {
+        document.getElementById("confetti-wrapper").innerHTML = "";
+        alert("Selesai. Semua nomer undian sudah keluar. Acak undian ini akan direset ulang.");
+        // refresh page
+        location.reload();
+        document.getElementById("angkakeluar").value = "";
+      } else {
+        // if length i = 50
+        if (i == 49) {
+          // if angka123 not in angkakeluar
+          if (!angkakeluar.includes(angka123)) {
+              angkakeluar.push(angka123);
+              console.log(angkakeluar);
+              document.getElementById("angkakeluar").value = angkakeluar;
+              celebrate();
+          } else {
+            acak();
+          }
+        }
+      }
 		}, 100 * i);
 	}
-  celebrate();
 }
 
 function celebrate() {

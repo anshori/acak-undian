@@ -88,6 +88,12 @@ button:active {
 	flex-direction: column;
 }
 
+.subtitle {
+	font-size: 14px;
+	margin-top: 50px;
+	color: rgb(0, 0, 0);
+}
+
 .footer {
 	font-style: italic;
 	font-size: 10px;
