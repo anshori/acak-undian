@@ -36,7 +36,7 @@ function acak() {
         angka3 = Math.floor(Math.random() * 9) + 1;
       }
 
-      // angka3 max 0
+      // angka3 max 0, maximum number 160 
       if (angka1 == 1 && angka2 == 6) {
         angka3 = 0;
       }
