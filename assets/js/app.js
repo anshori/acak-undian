@@ -45,15 +45,17 @@ function acak() {
 			document.getElementById("angka2").innerHTML = angka2;
 			document.getElementById("angka3").innerHTML = angka3;
 
-      // angka keluar
+      // concat angka1, angka2, angka3
       angka123 = angka1.toString() + angka2.toString() + angka3.toString();
+
+      // convert string to int
       angka123 = parseInt(angka123);
 
-      // if angkakeluar length jumlah undian yang keluar + 1 karena 0 dihitung
+      // if the length of angkakeluar is equal to the number of draws that came out + 1 because 0 is counted
       if (angkakeluar.length == jumlahdoorprise + 1) {
         document.getElementById("confetti-wrapper").innerHTML = "";
         alert("Selesai. Semua nomer undian sudah keluar. Acak undian ini akan direset ulang.");
-        // refresh page
+        // reload page
         location.reload();
         document.getElementById("angkakeluar").value = "";
       } else {
@@ -61,10 +63,11 @@ function acak() {
         if (i == 49) {
           // if angka123 not in angkakeluar
           if (!angkakeluar.includes(angka123)) {
-              angkakeluar.push(angka123);
-              console.log(angkakeluar);
-              document.getElementById("angkakeluar").value = angkakeluar;
-              celebrate();
+            // push angka123 to angkakeluar
+            angkakeluar.push(angka123);
+            console.log(angkakeluar);
+            document.getElementById("angkakeluar").value = angkakeluar;
+            celebrate();
           } else {
             acak();
           }
