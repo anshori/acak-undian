@@ -1,9 +1,20 @@
 # ACAK UNDIAN DOORPRIZE
-Acak undian doorprize hut RI ke-78
+Acak undian doorprize untuk memeriahkan HUT RI ke-79
 
-Acak undian ini diatur angka yang keluar 001 - 160.
+Acak undian ini diatur angka yang keluar 001 - 263 dengan jumlah doorprize 50 buah.
 
-Silahkan disesuaikan jumlah undian di app.js bagian script _generate random number_
+Silahkan sesuaikan jumlah doorprise dan jumlah hadirin di file _**js/app.js**_ pada baris 11 dan 12.
+```javascript
+let jumlahdoorprise = 50;
+let jumlahhadirin = 263;
+```
+
+
+
+#### Catatan
+```
+Angka yang sudah keluar dan dimunculkan di layar tidak akan keluar lagi
+```
 
 ___    
 

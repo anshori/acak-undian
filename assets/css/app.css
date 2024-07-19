@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
 
 body {
-	background-image: url("../image/bg-hut-78.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-  background-position: center;
+	background-color: white;
 	overflow: hidden;
 }
+#logo-indonesiamaju {
+	/* left */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 280px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+#logo-merdeka {
+	/* right */
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+}
+
 .title {
   font-size: 42px;
 }
@@ -17,6 +34,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin: 0px;
 }
 .row {
   display: flex;
@@ -99,6 +117,7 @@ button:active {
 	font-size: 10px;
 	margin-top: 50px;
 	color: gray;
+	z-index: 999;
 }
 
 :root {
@@ -152,8 +171,26 @@ button:active {
 /* if screen < 768 */
 @media screen and (max-width: 768px) {
   body {
-    background-image: url("../image/bg-hut-78-portrait.jpg");
+    background-color: white;
   }
+	#logo-indonesiamaju {
+		/* left */
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200px;
+		margin-top: 20px;
+		margin-left: 20px;
+	}
+	#logo-merdeka {
+		/* right */
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 180px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+	}
   .container {
     width: 100%;
     height: 100vh;

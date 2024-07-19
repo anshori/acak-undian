@@ -6,19 +6,34 @@ function acak() {
   // Reset confetti
   document.getElementById("confetti-wrapper").innerHTML = "";
 
+	// CHANGE THIS
+	/* adjust to the number of door prizes and number of attendees */
   let jumlahdoorprise = 50;
+	let jumlahhadirin = 263;
+
+	// split jumlahhadirin
+	jumlahhadirin = jumlahhadirin.toString().split("");
+	// map jumlahhadirin
+	jumlahhadirin = jumlahhadirin.map(Number);
+
+	let jumlahhadirin1 = jumlahhadirin[0];
+	let jumlahhadirin2 = jumlahhadirin[1];
+	let jumlahhadirin3 = jumlahhadirin[2];
+
+	console.log("Jumlah doorprize = " + jumlahdoorprise);
+	console.log("Jumlah hadirin = " + jumlahhadirin1 + + jumlahhadirin2 + + jumlahhadirin3);
 
   let angkakeluar = document.getElementById("angkakeluar").value;
   angkakeluar = angkakeluar.split(",");
   angkakeluar = angkakeluar.map(Number);
 
-  console.log(angkakeluar.length);
+  // console.log(angkakeluar.length);
 
 	// Generate random number
 	for (let i = 0; i < 50; i++) {
 		setTimeout(() => {
       // value 0 or 1
-			let angka1 = Math.floor(Math.random() * 2);
+			let angka1 = Math.floor(Math.random() * (jumlahhadirin1 + 1));
 
       // value 0 - 9
 			let angka2 = Math.floor(Math.random() * 10);
@@ -26,9 +41,9 @@ function acak() {
       // value 0 - 9
 			let angka3 = Math.floor(Math.random() * 10);
 
-      // angka2 max 6
-      if (angka1 == 1) {
-        angka2 = Math.floor(Math.random() * 7);
+      // angka2 max jumlahhadirin2
+      if (angka1 == jumlahhadirin1) {
+        angka2 = Math.floor(Math.random() * (jumlahhadirin2 + 1));
       }
 
       // angka1 and angka2 = 0
@@ -37,8 +52,8 @@ function acak() {
       }
 
       // angka3 max 0, maximum number 160 
-      if (angka1 == 1 && angka2 == 6) {
-        angka3 = 0;
+      if (angka1 == jumlahhadirin1 && angka2 == jumlahhadirin2) {
+        angka3 = Math.floor(Math.random() * (jumlahhadirin3 + 1));
       }
 
 			document.getElementById("angka1").innerHTML = angka1;
@@ -46,7 +61,7 @@ function acak() {
 			document.getElementById("angka3").innerHTML = angka3;
 
       // concat angka1, angka2, angka3
-      angka123 = angka1.toString() + angka2.toString() + angka3.toString();
+      let angka123 = angka1.toString() + angka2.toString() + angka3.toString();
 
       // convert string to int
       angka123 = parseInt(angka123);
@@ -59,8 +74,8 @@ function acak() {
         location.reload();
         document.getElementById("angkakeluar").value = "";
       } else {
-        // if length i = 50
-        if (i == 49) {
+        // if length i = jumlahdoorprise
+        if (i == (jumlahdoorprise - 1)) {
           // if angka123 not in angkakeluar
           if (!angkakeluar.includes(angka123)) {
             // push angka123 to angkakeluar
