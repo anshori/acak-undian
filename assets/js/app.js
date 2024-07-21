@@ -1,36 +1,49 @@
 function acak() {
-	// Play sound
-	// var audio = new Audio("assets/sound/dice-roll-sound-effect-1139.mp3");
-	// audio.play();
-
   // Reset confetti
   document.getElementById("confetti-wrapper").innerHTML = "";
 
-	// CHANGE THIS
-	/* adjust to the number of door prizes and number of attendees */
-  let jumlahdoorprise = 50;
-	let jumlahhadirin = 263;
+  let jumlahdoorprize = document.getElementById("jumlahdoorprize").value;
+	let jumlahhadirin = document.getElementById("jumlahhadirin").value;
+
+	if (jumlahdoorprize == "" || jumlahhadirin == "") {
+		alert("Masukkan jumlah doorprize dan jumlah hadirin!");
+		return;
+	} else if (jumlahdoorprize == 0 || jumlahhadirin == 0) {
+		alert("Jumlah doorprize dan jumlah hadirin tidak boleh 0!");
+		return;
+	} else if (jumlahdoorprize > jumlahhadirin) {
+		alert("Jumlah doorprize tidak boleh lebih besar dari jumlah hadirin!");
+		return;
+	}
+
+	jumlahdoorprize = parseInt(jumlahdoorprize);
 
 	// split jumlahhadirin
 	jumlahhadirin = jumlahhadirin.toString().split("");
 	// map jumlahhadirin
 	jumlahhadirin = jumlahhadirin.map(Number);
 
+	if (jumlahhadirin.length == 1) {
+		jumlahhadirin = [0, 0, jumlahhadirin[0]];
+	} else if (jumlahhadirin.length == 2) {
+		jumlahhadirin = [0, jumlahhadirin[0], jumlahhadirin[1]];
+	}
+		
 	let jumlahhadirin1 = jumlahhadirin[0];
 	let jumlahhadirin2 = jumlahhadirin[1];
 	let jumlahhadirin3 = jumlahhadirin[2];
 
-	console.log("Jumlah doorprize = " + jumlahdoorprise);
+	console.log("Jumlah doorprize = " + jumlahdoorprize);
 	console.log("Jumlah hadirin = " + jumlahhadirin1 + + jumlahhadirin2 + + jumlahhadirin3);
 
   let angkakeluar = document.getElementById("angkakeluar").value;
   angkakeluar = angkakeluar.split(",");
   angkakeluar = angkakeluar.map(Number);
 
-  // console.log(angkakeluar.length);
+  console.log(angkakeluar.length);
 
 	// Generate random number
-	for (let i = 0; i < 50; i++) {
+	for (let i = 0; i < jumlahdoorprize; i++) {
 		setTimeout(() => {
       // value 0 or 1
 			let angka1 = Math.floor(Math.random() * (jumlahhadirin1 + 1));
@@ -67,15 +80,15 @@ function acak() {
       angka123 = parseInt(angka123);
 
       // if the length of angkakeluar is equal to the number of draws that came out + 1 because 0 is counted
-      if (angkakeluar.length == jumlahdoorprise + 1) {
+      if (angkakeluar.length == (jumlahdoorprize + 1)) {
         document.getElementById("confetti-wrapper").innerHTML = "";
-        alert("Selesai. Semua nomer undian sudah keluar. Acak undian ini akan direset ulang.");
+        alert("Selesai. Semua nomer undian sudah keluar. Acak undian ini akan direset ulang.\nAngka yang sudah keluar:\n" + angkakeluar);
         // reload page
         location.reload();
         document.getElementById("angkakeluar").value = "";
       } else {
-        // if length i = jumlahdoorprise
-        if (i == (jumlahdoorprise - 1)) {
+        // if length i = jumlahdoorprize
+        if (i == (jumlahdoorprize - 1)) {
           // if angka123 not in angkakeluar
           if (!angkakeluar.includes(angka123)) {
             // push angka123 to angkakeluar
