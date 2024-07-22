@@ -5,6 +5,9 @@ function acak() {
   let jumlahdoorprize = document.getElementById("jumlahdoorprize").value;
 	let jumlahhadirin = document.getElementById("jumlahhadirin").value;
 
+	jumlahdoorprize = parseInt(jumlahdoorprize);
+	jumlahhadirin = parseInt(jumlahhadirin);
+
 	if (jumlahdoorprize == "" || jumlahhadirin == "") {
 		alert("Masukkan jumlah doorprize dan jumlah hadirin!");
 		return;
@@ -16,7 +19,6 @@ function acak() {
 		return;
 	}
 
-	jumlahdoorprize = parseInt(jumlahdoorprize);
 
 	// split jumlahhadirin
 	jumlahhadirin = jumlahhadirin.toString().split("");
@@ -82,7 +84,8 @@ function acak() {
       // if the length of angkakeluar is equal to the number of draws that came out + 1 because 0 is counted
       if (angkakeluar.length == (jumlahdoorprize + 1)) {
         document.getElementById("confetti-wrapper").innerHTML = "";
-        alert("Selesai. Semua nomer undian sudah keluar. Acak undian ini akan direset ulang.\nAngka yang sudah keluar:\n" + angkakeluar);
+				let reset_info = "Selesai.\n" + jumlahdoorprize + " doorprize sudah habis.\nAcak undian ini akan direset ulang. \nAngka yang sudah keluar:\n" + angkakeluar;
+        alert(reset_info);
         // reload page
         location.reload();
         document.getElementById("angkakeluar").value = "";
@@ -137,4 +140,8 @@ function celebrate() {
     confetti.style.animationDelay=randomAnimationDelay + 's';
     document.getElementById("confetti-wrapper").appendChild(confetti);
   }
+}
+
+function info() {
+	alert("1. Ubah jumlah doorprize dan jumlah hadirin sesuai kebutuhan di kolom input masing-masing.\n2. Jumlah doorprize dan jumlah hadirin maksimal adalah 999.\n3. Jumlah doorprize tidak boleh lebih besar daripada jumlah hadirin.\n4. Klik tombol Acak untuk memulai acak undian.");
 }
