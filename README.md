@@ -5,7 +5,7 @@ Acak undian ini diatur angka yang keluar secara _default_ 001 - 079 dengan jumla
 
 Silahkan sesuaikan jumlah doorprize dan jumlah hadirin di kolom input **Jumlah Doorprize** dan **Jumlah Hadirin**.
 
-![Screenshot](assets/image/Screenshot.png)
+![Screenshot](assets/image/Screenshot81.png)
 
 
 #### Catatan
